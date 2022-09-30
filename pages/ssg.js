@@ -1,16 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Link from "next/link";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   console.log("server");
   return {
     props: { time: new Date().toISOString() },
   };
 }
 
-export default function Home({ time }) {
+export default function SSG({ time }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -21,16 +20,6 @@ export default function Home({ time }) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>{time}</h1>
-        <h1>
-          <Link href="/csr">
-            <a>CSR 로</a>
-          </Link>
-        </h1>
-        <h1>
-          <Link href="/ssg">
-            <a>SSG 로</a>
-          </Link>
-        </h1>
       </main>
 
       <footer className={styles.footer}>
