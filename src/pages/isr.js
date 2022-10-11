@@ -19,7 +19,7 @@ export default function ISR({ time }) {
     </div>
   );
 }
-
+z;
 ISR.getLayout = function getLayout(page) {
   return (
     <Layout>
